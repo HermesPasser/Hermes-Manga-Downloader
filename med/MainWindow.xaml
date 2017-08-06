@@ -5,10 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:med"
         mc:Ignorable="d"
-        Title="HMD MangaEden Downloader" Height="350" Width="525">
+        Title="HMD MangaEden Downloader" Height="160" Width="320">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="216,190,0,0" VerticalAlignment="Top" Width="75" Click="btn_Click"/>
-        <TextBox x:Name="textlink"  HorizontalAlignment="Left" Height="23" Margin="216,115,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="File">
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+                <MenuItem Header="Help">
+                    <MenuItem Header="Mangafox Downloader" />
+                    <MenuItem Header="Manga Host Downloader" />
+                    <Separator />
+                    <MenuItem Header="About" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Label Content="Language" Margin="10,17,238,126"/>
+        <Label Content="Name" Margin="130,17,114,126" RenderTransformOrigin="1.991,0.689"/>
+        <Label Content="Chapter" Margin="250,17,10,126" RenderTransformOrigin="1.991,0.689"/>
+        <Button Content="Download" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Width="290" Click="btn_Click"/>
 
+        <WrapPanel HorizontalAlignment="Left" Height="25" Margin="10,46,0,0" VerticalAlignment="Top" Width="290">
+            <ComboBox Height="23" VerticalAlignment="Top" Margin="0,0,0,0" Width="100 ">
+                <ComboBoxItem Content="English" HorizontalAlignment="Left" Width="118"/>
+                <ComboBoxItem Content="Italian" HorizontalAlignment="Left" Width="118"/>
+            </ComboBox>
+            <TextBox x:Name="textManga" Height="23" Margin="20,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100"/>
+            <TextBox x:Name="textChapter" Height="23" Margin="20,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
+        </WrapPanel>
     </Grid>
 </Window>

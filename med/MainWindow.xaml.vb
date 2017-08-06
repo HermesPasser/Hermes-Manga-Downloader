@@ -1,16 +1,17 @@
-﻿'Imports System.Collections
-Imports System.Net
+﻿Imports System.Net
 Imports System.IO
 
 Class MainWindow
     Private Sub btn_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-        ' essa linha deve dar erro se o link for invalido
-        ' catar o erro e retornar null para poder enviar msg de erro ao user
-        Dim t As String() = GetTextOfImageLinks(GetURL("https://www.mangaeden.com/en/it-manga/batticuore-notturno---ransie-la-strega/6/22/"))
-        t = GetImageLinksInTheText(t)
-        DownloadImages(t, "C:\Users\Diogo\Desktop\med\tokimeki")
-        'MessageBox.Show(GetType(t(0)))
-        'DownloadImage("cdn.mangaeden.com/mangasimg/61/61f08f33a34da3da63fb64725d0a9e0ba9e8b439887da5a15de2e440.jpg", "C:\Users\Diogo\Desktop\med\tokimeki")
+        textManga.Text = textManga.Text.Replace(" ", "-")
+        Dim t As String() = GetTextOfImageLinks(GetURL("http://www.mangaeden.com/en/en-manga/nanatsu-no-taizai/229/1/"))
+        If t IsNot Nothing Then
+            t = GetImageLinksInTheText(t)
+            DownloadImages(t, "C:\Users\Diogo\Desktop\med\tokimeki")
+        Else
+            MessageBox.Show("This manga is not available or is licensed in your region, make sure you entered the name, chapter and language correctly.")
+        End If
+
     End Sub
 
     Private Function GetURL(url As String) As String
