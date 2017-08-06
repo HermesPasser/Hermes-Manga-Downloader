@@ -1,20 +1,45 @@
-﻿Imports System.Net
+﻿Imports System.Windows.Forms
+Imports System.Net
 Imports System.IO
 
 Class MainWindow
+    Dim filepath As String
+
+    Private Sub init(sender As Object, e As EventArgs)
+        filepath = ""
+        textManga.Text = ""
+        textChapter.Text = ""
+        cbLanguage.SelectedIndex = 0
+    End Sub
+
+    Private Sub btnPath_Click(sender As Object, e As RoutedEventArgs)
+        Dim dialog As OpenFileDialog = New OpenFileDialog()
+        If dialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            filepath = dialog.FileName
+        End If
+    End Sub
+
     Private Sub btn_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
         textManga.Text = textManga.Text.Replace(" ", "-")
-        Dim t As String() = GetTextOfImageLinks(GetURL("http://www.mangaeden.com/en/en-manga/nanatsu-no-taizai/229/1/"))
+
+        If textManga.Text Is "" Or textChapter.Text Is "" Or filepath Is "" Then
+            MessageBox.Show("Complete all fields.")
+            Return
+        End If
+
+        Dim cb As String = IIf(cbLanguage.SelectedIndex = 0, "en", "it")
+        Dim str As String = "http://www.mangaeden.com/en/" + cb + "-directory/" + textManga.Text + "/" + textChapter.Text + "/1/"
+        Dim t As String() = GetTextOfImageLinks(GetHTML(str))
+
         If t IsNot Nothing Then
             t = GetImageLinksInTheText(t)
-            DownloadImages(t, "C:\Users\Diogo\Desktop\med\tokimeki")
+            DownloadImages(t, filepath + textManga.Text + "_c" + textChapter.Text)
         Else
             MessageBox.Show("This manga is not available or is licensed in your region, make sure you entered the name, chapter and language correctly.")
         End If
-
     End Sub
 
-    Private Function GetURL(url As String) As String
+    Private Function GetHTML(url As String) As String
         Dim res As WebResponse = (WebRequest.Create(url)).GetResponse()
         Dim reader As StreamReader = New StreamReader(res.GetResponseStream())
         Dim result As String = reader.ReadToEnd()
@@ -63,4 +88,5 @@ Class MainWindow
             MessageBox.Show("link: " + link + Environment.NewLine + "filename: " + filename + Environment.NewLine + "Error: " + e.ToString())
         End Try
     End Sub
+
 End Class

@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:med"
+        xmlns:local="clr-namespace:HermesMangaDownloader"
         mc:Ignorable="d"
-        Title="HMD MangaEden Downloader" Height="160" Width="320" ResizeMode="NoResize">
+        Title="HMD MangaEden Downloader" Height="160" Width="320" ResizeMode="CanMinimize" Icon="app-icon.png" Initialized="init">
     <Grid>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
@@ -17,14 +17,16 @@
                 <Separator />
                 <MenuItem Header="About" />
             </MenuItem>
-        </Menu>
-        <Label Content="Language" Margin="10,17,238,85"/>
-        <Label Content="Name" Margin="130,17,114,85" RenderTransformOrigin="1.991,0.689"/>
-        <Label Content="Chapter" Margin="250,17,10,85" RenderTransformOrigin="1.991,0.689"/>
-        <Button Content="Download" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="290" Click="btn_Click" RenderTransformOrigin="0.5,-0.5"/>
 
-        <WrapPanel HorizontalAlignment="Left" Height="25" Margin="10,46,0,0" VerticalAlignment="Top" Width="290">
-            <ComboBox Height="23" VerticalAlignment="Top" Margin="0,0,0,0" Width="100 ">
+        </Menu>
+        <Label Content="Language"  Margin="10,26,204,55" RenderTransformOrigin="1.991,0.689"/>
+        <Label Content="Name"  Margin="132,26,82,55" RenderTransformOrigin="1.991,0.689"/>
+        <Label Content="Chapter"  Margin="252,26,-38,55" RenderTransformOrigin="1.991,0.689"/>
+        <Button Content="Download" HorizontalAlignment="Left" Margin="132,91,0,0" VerticalAlignment="Top" Width="168" Click="btn_Click" RenderTransformOrigin="0.5,-0.5"/>
+        <Button Content="Path" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Width="100" Click="btnPath_Click" RenderTransformOrigin="0.5,-0.5"/>
+
+        <WrapPanel HorizontalAlignment="Left" Height="25" Margin="10,51,0,0" VerticalAlignment="Top" Width="290">
+            <ComboBox x:Name="cbLanguage" Height="23" VerticalAlignment="Top" Margin="0,0,0,0" Width="100 ">
                 <ComboBoxItem Content="English" HorizontalAlignment="Left" Width="118"/>
                 <ComboBoxItem Content="Italian" HorizontalAlignment="Left" Width="118"/>
             </ComboBox>
