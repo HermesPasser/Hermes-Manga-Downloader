@@ -219,7 +219,7 @@ Partial Class MangaEdenForm
         'textLog
         '
         Me.textLog.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.textLog.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.12!)
+        Me.textLog.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.textLog.Location = New System.Drawing.Point(12, 175)
         Me.textLog.Multiline = True
         Me.textLog.Name = "textLog"
