@@ -48,7 +48,7 @@ Partial Class FormAbout
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(259, 29)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "by Hermes Passer " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(hermespasser@gmail.com) "
+        Me.Label1.Text = "Hermes Passer " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(hermespasser@gmail.com) "
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'PictureBox2

@@ -48,6 +48,7 @@ Public Class MangaEdenForm
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If isFinish Then
             EnabledChapterButtons(True)
+            ReturnMainMenuItem.Enabled = True
             btnDownload.Text = "Download"
             isFinish = False
         End If
@@ -74,6 +75,7 @@ Public Class MangaEdenForm
 
         textManga.Text = textManga.Text.Replace(" ", "-")
         EnabledChapterButtons(False)
+        ReturnMainMenuItem.Enabled = False
         btnDownload.Text = "Downloading..."
         t.Start()
     End Sub
@@ -110,4 +112,8 @@ Public Class MangaEdenForm
         Application.Exit()
     End Sub
 
+    Private Sub ReturnToMainFormToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReturnMainMenuItem.Click
+        MainForm.Main.Show()
+        Me.Hide()
+    End Sub
 End Class

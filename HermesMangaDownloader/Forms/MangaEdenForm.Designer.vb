@@ -38,6 +38,7 @@ Partial Class MangaEdenForm
         Me.btnPath = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReturnMainMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MangaHostToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -170,15 +171,21 @@ Partial Class MangaEdenForm
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReturnMainMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
+        'ReturnMainMenuItem
+        '
+        Me.ReturnMainMenuItem.Name = "ReturnMainMenuItem"
+        Me.ReturnMainMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.ReturnMainMenuItem.Text = "Return to main form"
+        '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(92, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'DownloaderToolStripMenuItem
@@ -191,13 +198,13 @@ Partial Class MangaEdenForm
         'MangaHostToolStripMenuItem
         '
         Me.MangaHostToolStripMenuItem.Name = "MangaHostToolStripMenuItem"
-        Me.MangaHostToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.MangaHostToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.MangaHostToolStripMenuItem.Text = "Manga Host"
         '
         'MangaFoxToolStripMenuItem
         '
         Me.MangaFoxToolStripMenuItem.Name = "MangaFoxToolStripMenuItem"
-        Me.MangaFoxToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.MangaFoxToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.MangaFoxToolStripMenuItem.Text = "MangaFox"
         '
         'HelpToolStripMenuItem
@@ -231,7 +238,7 @@ Partial Class MangaEdenForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(304, 273)
+        Me.ClientSize = New System.Drawing.Size(304, 274)
         Me.Controls.Add(Me.textLog)
         Me.Controls.Add(Me.btnPath)
         Me.Controls.Add(Me.textManga)
@@ -278,4 +285,5 @@ Partial Class MangaEdenForm
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Timer1 As Timer
     Friend WithEvents textLog As TextBox
+    Friend WithEvents ReturnMainMenuItem As ToolStripMenuItem
 End Class
