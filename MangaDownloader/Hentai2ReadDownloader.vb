@@ -11,12 +11,18 @@
             Return
         End If
 
-        Dim str As String = GetHTML(GetBaseURL() + manga + "/" + chapter + "/")
-        Dim t As String() = GetImageLinksInTheText(str)
+        mangaName = manga
+        mangaChapter = chapter
+        directoryPath = New IO.DirectoryInfo(filename) ' folder name: manganame_cn, file name: manganame_cn_pn
 
-        If t IsNot Nothing Then
+        Dim str As String = GetHTML(GetBaseURL() + manga + "/" + chapter + "/")
+        Dim stringLinks As String() = GetImageLinksInTheText(str)
+
+        If stringLinks IsNot Nothing Then
+
+            DownloadImages(stringLinks)
+
             Dim name As String = filename + manga + "_c" + chapter
-            DownloadImages(t, name)
             ApplicationShared.Log = name + " downloaded finished " + Environment.NewLine + ApplicationShared.Log
         Else
             Throw New MangaDownloadException(ApplicationShared.errorDefault)
@@ -29,6 +35,8 @@
         If htmlText Is Nothing Then
             Return Nothing
         End If
+
+        ' TODO: Use regex to clean this mess
 
         If Not htmlText.Contains("var gData") Then
             Return Nothing

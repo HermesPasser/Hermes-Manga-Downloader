@@ -2,7 +2,7 @@
 Imports System.IO
 
 Public Class Hentai2ReadForm
-    Dim isFinish As Boolean = False
+    Dim finished As Boolean = False
     Dim filepath As String
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -24,7 +24,7 @@ Public Class Hentai2ReadForm
     Private Sub Download(manga As String, chapters As ListBox.ObjectCollection, filename As String)
         Dim md As Hentai2ReadDownloader = New Hentai2ReadDownloader()
         For Each ch As String In chapters
-            Dim path As String = filename + manga + "_c" + ch + "\"
+            Dim path = IO.Path.Combine(filename, manga + "_c" + ch)
             Directory.CreateDirectory(path)
 
             Try
@@ -35,21 +35,21 @@ Public Class Hentai2ReadForm
                 End If
 
                 MessageBox.Show(ex.Message)
-                isFinish = True
+                finished = True
                 Return
             End Try
         Next
 
-        isFinish = True
+        finished = True
         MessageBox.Show("Download Completed.")
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If isFinish Then
+        If finished Then
             EnabledChapterButtons(True)
             ReturnMainMenuItem.Enabled = True
             btnDownload.Text = "Download"
-            isFinish = False
+            finished = False
         End If
         textLog.Text = ApplicationShared.Log
     End Sub

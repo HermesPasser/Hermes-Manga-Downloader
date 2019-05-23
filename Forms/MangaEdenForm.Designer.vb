@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MangaEdenForm
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class MangaEdenForm
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MangaEdenForm))
@@ -198,13 +198,13 @@ Partial Class MangaEdenForm
         'MangaHostToolStripMenuItem
         '
         Me.MangaHostToolStripMenuItem.Name = "MangaHostToolStripMenuItem"
-        Me.MangaHostToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.MangaHostToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.MangaHostToolStripMenuItem.Text = "Manga Host"
         '
         'MangaFoxToolStripMenuItem
         '
         Me.MangaFoxToolStripMenuItem.Name = "MangaFoxToolStripMenuItem"
-        Me.MangaFoxToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.MangaFoxToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.MangaFoxToolStripMenuItem.Text = "MangaFox"
         '
         'HelpToolStripMenuItem
