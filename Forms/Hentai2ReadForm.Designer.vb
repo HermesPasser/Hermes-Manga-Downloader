@@ -44,6 +44,8 @@ Partial Class Hentai2ReadForm
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.textLog = New System.Windows.Forms.TextBox()
+        Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShowOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -140,7 +142,7 @@ Partial Class Hentai2ReadForm
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.DownloaderToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.OptionsToolStripMenuItem, Me.DownloaderToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(304, 24)
@@ -212,6 +214,19 @@ Partial Class Hentai2ReadForm
         Me.textLog.Size = New System.Drawing.Size(280, 86)
         Me.textLog.TabIndex = 4
         '
+        'OptionsToolStripMenuItem
+        '
+        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowOptionsToolStripMenuItem})
+        Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.OptionsToolStripMenuItem.Text = "Options"
+        '
+        'ShowOptionsToolStripMenuItem
+        '
+        Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
+        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ShowOptionsToolStripMenuItem.Text = "Show Options"
+        '
         'Hentai2ReadForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -258,4 +273,6 @@ Partial Class Hentai2ReadForm
     Friend WithEvents Timer1 As Timer
     Friend WithEvents textLog As TextBox
     Friend WithEvents ReturnMainMenuItem As ToolStripMenuItem
+    Friend WithEvents OptionsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ShowOptionsToolStripMenuItem As ToolStripMenuItem
 End Class

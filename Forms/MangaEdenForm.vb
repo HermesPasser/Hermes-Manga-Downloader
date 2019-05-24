@@ -24,8 +24,9 @@ Public Class MangaEdenForm
 
     Private Sub Download(language As MangaEdenDownloader.Language, manga As String, chapters As ListBox.ObjectCollection, filename As String)
         Dim md As MangaEdenDownloader = New MangaEdenDownloader()
+        md.threadLimit = ApplicationShared.ThreadLimitOption
         For Each ch As String In chapters
-            Dim path = IO.Path.Combine(filename, manga + "_c" + ch)
+            Dim path = IO.Path.Combine(filename, manga, manga + "_c" + ch)
             Directory.CreateDirectory(path)
 
             Try
@@ -96,8 +97,7 @@ Public Class MangaEdenForm
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        Dim a As FormAbout = New FormAbout()
-        a.Show()
+        MainForm.About.Show()
     End Sub
 
     Private Sub MangaFoxToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MangaFoxToolStripMenuItem.Click
@@ -119,5 +119,12 @@ Public Class MangaEdenForm
 
     Private Sub MangaEdenForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Application.Exit()
+    End Sub
+
+    Private Sub ShowOptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowOptionsToolStripMenuItem.Click
+        Dim t As New OptionsForm
+        t.MotherForm = Me
+        t.Show()
+        Me.Enabled = False
     End Sub
 End Class

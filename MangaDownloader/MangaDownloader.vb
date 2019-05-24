@@ -3,7 +3,7 @@ Imports System.IO
 Imports System.Threading
 
 Public MustInherit Class MangaDownloader
-    Dim threadLimit = 5
+    Public threadLimit As Integer = 5
     Protected mangaName As String
     Protected mangaChapter As String
     Protected directoryPath As DirectoryInfo

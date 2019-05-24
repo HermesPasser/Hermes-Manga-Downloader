@@ -2,10 +2,12 @@
     Dim eden As MangaEdenForm
     Dim hentai As Hentai2ReadForm
     Public Shared Main As MainForm
+    Public Shared About As FormAbout
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         eden = New MangaEdenForm()
         hentai = New Hentai2ReadForm()
+        About = New FormAbout()
         Main = Me
     End Sub
 
@@ -19,12 +21,11 @@
         Me.Hide()
     End Sub
 
-    Private Sub aboutButton_Click(sender As Object, e As EventArgs) Handles aboutButton.Click
-        Dim a As FormAbout = New FormAbout()
-        a.Show()
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        About.Show()
     End Sub
 
-    Private Sub exitButton_Click(sender As Object, e As EventArgs) Handles exitButton.Click
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Application.Exit()
     End Sub
 End Class
