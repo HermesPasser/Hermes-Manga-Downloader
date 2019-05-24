@@ -58,7 +58,7 @@ Partial Class Hentai2ReadForm
         Me.GroupBox1.Location = New System.Drawing.Point(140, 30)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(153, 139)
-        Me.GroupBox1.TabIndex = 2
+        Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Chapter"
         '
@@ -68,14 +68,14 @@ Partial Class Hentai2ReadForm
         Me.listChapters.Location = New System.Drawing.Point(88, 17)
         Me.listChapters.Name = "listChapters"
         Me.listChapters.Size = New System.Drawing.Size(57, 108)
-        Me.listChapters.TabIndex = 7
+        Me.listChapters.TabIndex = 4
         '
         'btnAddChap
         '
         Me.btnAddChap.Location = New System.Drawing.Point(6, 45)
         Me.btnAddChap.Name = "btnAddChap"
         Me.btnAddChap.Size = New System.Drawing.Size(75, 23)
-        Me.btnAddChap.TabIndex = 6
+        Me.btnAddChap.TabIndex = 1
         Me.btnAddChap.Text = "Add"
         Me.btnAddChap.UseVisualStyleBackColor = True
         '
@@ -84,7 +84,7 @@ Partial Class Hentai2ReadForm
         Me.btnClearChap.Location = New System.Drawing.Point(6, 103)
         Me.btnClearChap.Name = "btnClearChap"
         Me.btnClearChap.Size = New System.Drawing.Size(75, 23)
-        Me.btnClearChap.TabIndex = 4
+        Me.btnClearChap.TabIndex = 3
         Me.btnClearChap.Text = "Clear"
         Me.btnClearChap.UseVisualStyleBackColor = True
         '
@@ -100,7 +100,7 @@ Partial Class Hentai2ReadForm
         Me.btnRemoveChap.Location = New System.Drawing.Point(6, 74)
         Me.btnRemoveChap.Name = "btnRemoveChap"
         Me.btnRemoveChap.Size = New System.Drawing.Size(75, 23)
-        Me.btnRemoveChap.TabIndex = 3
+        Me.btnRemoveChap.TabIndex = 2
         Me.btnRemoveChap.Text = "Remove"
         Me.btnRemoveChap.UseVisualStyleBackColor = True
         '
@@ -109,7 +109,7 @@ Partial Class Hentai2ReadForm
         Me.btnDownload.Location = New System.Drawing.Point(12, 104)
         Me.btnDownload.Name = "btnDownload"
         Me.btnDownload.Size = New System.Drawing.Size(121, 23)
-        Me.btnDownload.TabIndex = 5
+        Me.btnDownload.TabIndex = 2
         Me.btnDownload.Text = "Download"
         Me.btnDownload.UseVisualStyleBackColor = True
         '
@@ -127,14 +127,14 @@ Partial Class Hentai2ReadForm
         Me.textManga.Location = New System.Drawing.Point(12, 49)
         Me.textManga.Name = "textManga"
         Me.textManga.Size = New System.Drawing.Size(121, 20)
-        Me.textManga.TabIndex = 8
+        Me.textManga.TabIndex = 0
         '
         'btnPath
         '
         Me.btnPath.Location = New System.Drawing.Point(12, 75)
         Me.btnPath.Name = "btnPath"
         Me.btnPath.Size = New System.Drawing.Size(121, 23)
-        Me.btnPath.TabIndex = 9
+        Me.btnPath.TabIndex = 1
         Me.btnPath.Text = "Set Path"
         Me.btnPath.UseVisualStyleBackColor = True
         '
@@ -144,7 +144,7 @@ Partial Class Hentai2ReadForm
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(304, 24)
-        Me.MenuStrip1.TabIndex = 10
+        Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
@@ -210,7 +210,7 @@ Partial Class Hentai2ReadForm
         Me.textLog.Name = "textLog"
         Me.textLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.textLog.Size = New System.Drawing.Size(280, 86)
-        Me.textLog.TabIndex = 8
+        Me.textLog.TabIndex = 4
         '
         'Hentai2ReadForm
         '

@@ -37,7 +37,7 @@ Partial Class MainForm
         Me.mangaEdenButton.Name = "mangaEdenButton"
         Me.mangaEdenButton.Size = New System.Drawing.Size(155, 35)
         Me.mangaEdenButton.TabIndex = 0
-        Me.mangaEdenButton.Text = "MangaEden" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(last update: 08-2017)"
+        Me.mangaEdenButton.Text = "MangaEden" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(last update: 05-2019)"
         Me.mangaEdenButton.UseVisualStyleBackColor = True
         '
         'hentai2ReadButton
@@ -46,7 +46,7 @@ Partial Class MainForm
         Me.hentai2ReadButton.Name = "hentai2ReadButton"
         Me.hentai2ReadButton.Size = New System.Drawing.Size(155, 35)
         Me.hentai2ReadButton.TabIndex = 1
-        Me.hentai2ReadButton.Text = "Hentai2Read" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(last update: 08-2017)"
+        Me.hentai2ReadButton.Text = "Hentai2Read" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(last update: 05-2019)"
         Me.hentai2ReadButton.UseVisualStyleBackColor = True
         '
         'aboutButton

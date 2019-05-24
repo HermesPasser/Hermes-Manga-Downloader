@@ -57,7 +57,7 @@ Public Class Hentai2ReadForm
     Private Sub btnPath_Click(sender As Object, e As EventArgs) Handles btnPath.Click
         Dim dialog As FolderBrowserDialog = New FolderBrowserDialog()
         If dialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-            filepath = dialog.SelectedPath + "\"
+            filepath = dialog.SelectedPath
         End If
     End Sub
 
@@ -99,11 +99,11 @@ Public Class Hentai2ReadForm
     End Sub
 
     Private Sub MangaFoxToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MangaFoxToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("https://hermespasser.github.io/pages/mangafoxdownloader.html")
+        Process.Start("https://hermespasser.github.io/pages/mangafoxdownloader.html")
     End Sub
 
     Private Sub MangaHostToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MangaHostToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("https://github.com/HermesPasser/Manga-Host-Downloader")
+        Process.Start("https://github.com/HermesPasser/Manga-Host-Downloader")
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -113,5 +113,9 @@ Public Class Hentai2ReadForm
     Private Sub ReturnToMainFormToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReturnMainMenuItem.Click
         MainForm.Main.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Hentai2ReadForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Application.Exit()
     End Sub
 End Class
