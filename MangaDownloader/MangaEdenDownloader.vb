@@ -25,7 +25,18 @@
 
         If stringLinks IsNot Nothing Then
             stringLinks = GetImageLinksInTheText(stringLinks)
-            DownloadImages(stringLinks)
+
+            Dim number As Integer = 1
+            Dim pages As New List(Of MangaPage)
+            For Each link In stringLinks
+                Dim page As MangaPage
+                page.url = link
+                page.name = GetFileName(number.ToString())
+                pages.Add(page)
+                number += 1
+            Next
+
+            DownloadPages(pages)
 
             Dim name As String = filename + manga + "_c" + chapter
             ApplicationShared.Log = name + " downloaded finished " + Environment.NewLine + ApplicationShared.Log

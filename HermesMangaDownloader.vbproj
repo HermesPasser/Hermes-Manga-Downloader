@@ -141,6 +141,7 @@
     </Compile>
     <Compile Include="MangaDownloader\MangaDownloadException.vb" />
     <Compile Include="MangaDownloader\MangaEdenDownloader.vb" />
+    <Compile Include="MangaDownloader\MangaPage.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
