@@ -35,7 +35,6 @@ Partial Class MangaEdenForm
         Me.btnDownload = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.textManga = New System.Windows.Forms.TextBox()
-        Me.btnPath = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReturnMainMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -130,7 +129,7 @@ Partial Class MangaEdenForm
         '
         'btnDownload
         '
-        Me.btnDownload.Location = New System.Drawing.Point(13, 146)
+        Me.btnDownload.Location = New System.Drawing.Point(13, 132)
         Me.btnDownload.Name = "btnDownload"
         Me.btnDownload.Size = New System.Drawing.Size(121, 23)
         Me.btnDownload.TabIndex = 5
@@ -152,15 +151,6 @@ Partial Class MangaEdenForm
         Me.textManga.Name = "textManga"
         Me.textManga.Size = New System.Drawing.Size(121, 20)
         Me.textManga.TabIndex = 8
-        '
-        'btnPath
-        '
-        Me.btnPath.Location = New System.Drawing.Point(13, 117)
-        Me.btnPath.Name = "btnPath"
-        Me.btnPath.Size = New System.Drawing.Size(121, 23)
-        Me.btnPath.TabIndex = 9
-        Me.btnPath.Text = "Set Path"
-        Me.btnPath.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
@@ -194,13 +184,13 @@ Partial Class MangaEdenForm
         '
         Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowOptionsToolStripMenuItem})
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(122, 20)
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.OptionsToolStripMenuItem.Text = "Options"
         '
-        'ThreadLimitToolStripMenuItem
+        'ShowOptionsToolStripMenuItem
         '
-        Me.ShowOptionsToolStripMenuItem.Name = "ThreadLimitToolStripMenuItem"
-        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
+        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
         Me.ShowOptionsToolStripMenuItem.Text = "Show Options"
         '
         'DownloaderToolStripMenuItem
@@ -213,13 +203,13 @@ Partial Class MangaEdenForm
         'MangaHostToolStripMenuItem
         '
         Me.MangaHostToolStripMenuItem.Name = "MangaHostToolStripMenuItem"
-        Me.MangaHostToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MangaHostToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.MangaHostToolStripMenuItem.Text = "Manga Host"
         '
         'MangaFoxToolStripMenuItem
         '
         Me.MangaFoxToolStripMenuItem.Name = "MangaFoxToolStripMenuItem"
-        Me.MangaFoxToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MangaFoxToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.MangaFoxToolStripMenuItem.Text = "MangaFox"
         '
         'HelpToolStripMenuItem
@@ -232,7 +222,7 @@ Partial Class MangaEdenForm
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'Timer1
@@ -255,7 +245,6 @@ Partial Class MangaEdenForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(304, 274)
         Me.Controls.Add(Me.textLog)
-        Me.Controls.Add(Me.btnPath)
         Me.Controls.Add(Me.textManga)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnDownload)
@@ -289,7 +278,6 @@ Partial Class MangaEdenForm
     Friend WithEvents btnDownload As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents textManga As TextBox
-    Friend WithEvents btnPath As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem

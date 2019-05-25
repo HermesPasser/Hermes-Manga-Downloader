@@ -7,7 +7,7 @@
 
     Public Sub Download(manga As String, chapter As String, filename As String)
         If manga Is "" Or chapter Is "" Or filename Is "" Then
-            Throw New MangaDownloadException(ApplicationShared.emptyFieldMsg)
+            Throw New MangaDownloadException([Shared].emptyFieldMsg)
             Return
         End If
 
@@ -32,9 +32,9 @@
             DownloadPages(pages)
 
             Dim name As String = filename + manga + "_c" + chapter
-            ApplicationShared.Log = name + " downloaded finished " + Environment.NewLine + ApplicationShared.Log
+            [Shared].Log = name + " downloaded finished " + Environment.NewLine + [Shared].Log
         Else
-            Throw New MangaDownloadException(ApplicationShared.errorDefault)
+            Throw New MangaDownloadException([Shared].errorDefault)
         End If
 
     End Sub

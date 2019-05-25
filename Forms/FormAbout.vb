@@ -1,6 +1,6 @@
 ﻿Public Class FormAbout
     Private Sub About_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        windowname.Text = ApplicationShared.appName
+        windowname.Text = [Shared].appName
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked

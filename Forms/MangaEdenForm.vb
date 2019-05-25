@@ -3,10 +3,8 @@ Imports System.IO
 
 Public Class MangaEdenForm
     Dim finished As Boolean = False
-    Dim filepath As String
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        filepath = ""
         textManga.Text = ""
         textChapter.Text = ""
         cbLanguage.SelectedIndex = 0
@@ -24,7 +22,7 @@ Public Class MangaEdenForm
 
     Private Sub Download(language As MangaEdenDownloader.Language, manga As String, chapters As ListBox.ObjectCollection, filename As String)
         Dim md As MangaEdenDownloader = New MangaEdenDownloader()
-        md.threadLimit = ApplicationShared.ThreadLimitOption
+        md.threadLimit = [Shared].threadLimitPref
         For Each ch As String In chapters
             Dim path = IO.Path.Combine(filename, manga, manga + "_c" + ch)
             Directory.CreateDirectory(path)
@@ -53,14 +51,7 @@ Public Class MangaEdenForm
             btnDownload.Text = "Download"
             finished = False
         End If
-        textLog.Text = ApplicationShared.Log
-    End Sub
-
-    Private Sub btnPath_Click(sender As Object, e As EventArgs) Handles btnPath.Click
-        Dim dialog As FolderBrowserDialog = New FolderBrowserDialog()
-        If dialog.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-            filepath = dialog.SelectedPath
-        End If
+        textLog.Text = [Shared].Log
     End Sub
 
     Private Sub btnDownload_Click(sender As Object, e As EventArgs) Handles btnDownload.Click
@@ -72,7 +63,7 @@ Public Class MangaEdenForm
         Dim l As Integer = cbLanguage.SelectedIndex
         Dim m As String = textManga.Text
         Dim c As ListBox.ObjectCollection = listChapters.Items
-        Dim t As Thread = New Thread(Sub() Download(l, m, c, filepath))
+        Dim t As Thread = New Thread(Sub() Download(l, m, c, [Shared].downloadFolderPref))
 
         textManga.Text = textManga.Text.Replace(" ", "-")
         EnabledChapterButtons(False)

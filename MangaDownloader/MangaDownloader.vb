@@ -38,7 +38,7 @@ Public MustInherit Class MangaDownloader
                                  DownloadImage(page)
                              End Sub
 
-            ApplicationShared.Log = "Downloading " + page.url + " as " + page.name + Environment.NewLine + ApplicationShared.Log
+            [Shared].Log = "Downloading " + page.url + " as " + page.name + Environment.NewLine + [Shared].Log
             threads.Add(New Thread(subprocess))
             threads.Last.Start()
 

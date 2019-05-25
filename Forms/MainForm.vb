@@ -9,6 +9,7 @@
         hentai = New Hentai2ReadForm()
         About = New FormAbout()
         Main = Me
+        [Shared].LoadPrefs()
     End Sub
 
     Private Sub mangaEdenButton_Click(sender As Object, e As EventArgs) Handles mangaEdenButton.Click

@@ -25,6 +25,8 @@ Partial Class OptionsForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OptionsForm))
         Me.UpDownThreadLimit = New System.Windows.Forms.Label()
         Me.numUpDownThreadLimit = New System.Windows.Forms.NumericUpDown()
+        Me.LabelDownloadPath = New System.Windows.Forms.Label()
+        Me.btnPath = New System.Windows.Forms.Button()
         CType(Me.numUpDownThreadLimit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -39,16 +41,36 @@ Partial Class OptionsForm
         '
         'numUpDownThreadLimit
         '
-        Me.numUpDownThreadLimit.Location = New System.Drawing.Point(79, 9)
+        Me.numUpDownThreadLimit.Location = New System.Drawing.Point(131, 9)
         Me.numUpDownThreadLimit.Name = "numUpDownThreadLimit"
         Me.numUpDownThreadLimit.Size = New System.Drawing.Size(120, 20)
         Me.numUpDownThreadLimit.TabIndex = 2
+        '
+        'LabelDownloadPath
+        '
+        Me.LabelDownloadPath.AutoSize = True
+        Me.LabelDownloadPath.Location = New System.Drawing.Point(12, 39)
+        Me.LabelDownloadPath.Name = "LabelDownloadPath"
+        Me.LabelDownloadPath.Size = New System.Drawing.Size(84, 13)
+        Me.LabelDownloadPath.TabIndex = 3
+        Me.LabelDownloadPath.Text = "Download folder"
+        '
+        'btnPath
+        '
+        Me.btnPath.Location = New System.Drawing.Point(131, 34)
+        Me.btnPath.Name = "btnPath"
+        Me.btnPath.Size = New System.Drawing.Size(121, 23)
+        Me.btnPath.TabIndex = 4
+        Me.btnPath.Text = "Set Folder"
+        Me.btnPath.UseVisualStyleBackColor = True
         '
         'OptionsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(211, 39)
+        Me.ClientSize = New System.Drawing.Size(263, 66)
+        Me.Controls.Add(Me.btnPath)
+        Me.Controls.Add(Me.LabelDownloadPath)
         Me.Controls.Add(Me.numUpDownThreadLimit)
         Me.Controls.Add(Me.UpDownThreadLimit)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -61,4 +83,6 @@ Partial Class OptionsForm
     End Sub
     Friend WithEvents UpDownThreadLimit As Label
     Friend WithEvents numUpDownThreadLimit As NumericUpDown
+    Friend WithEvents LabelDownloadPath As Label
+    Friend WithEvents btnPath As Button
 End Class

@@ -32,11 +32,12 @@ Partial Class Hentai2ReadForm
         Me.btnDownload = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.textManga = New System.Windows.Forms.TextBox()
-        Me.btnPath = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReturnMainMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShowOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DownloaderToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MangaHostToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MangaFoxToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,8 +45,6 @@ Partial Class Hentai2ReadForm
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.textLog = New System.Windows.Forms.TextBox()
-        Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ShowOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -108,7 +107,7 @@ Partial Class Hentai2ReadForm
         '
         'btnDownload
         '
-        Me.btnDownload.Location = New System.Drawing.Point(12, 104)
+        Me.btnDownload.Location = New System.Drawing.Point(12, 75)
         Me.btnDownload.Name = "btnDownload"
         Me.btnDownload.Size = New System.Drawing.Size(121, 23)
         Me.btnDownload.TabIndex = 2
@@ -130,15 +129,6 @@ Partial Class Hentai2ReadForm
         Me.textManga.Name = "textManga"
         Me.textManga.Size = New System.Drawing.Size(121, 20)
         Me.textManga.TabIndex = 0
-        '
-        'btnPath
-        '
-        Me.btnPath.Location = New System.Drawing.Point(12, 75)
-        Me.btnPath.Name = "btnPath"
-        Me.btnPath.Size = New System.Drawing.Size(121, 23)
-        Me.btnPath.TabIndex = 1
-        Me.btnPath.Text = "Set Path"
-        Me.btnPath.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
@@ -167,6 +157,19 @@ Partial Class Hentai2ReadForm
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'OptionsToolStripMenuItem
+        '
+        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowOptionsToolStripMenuItem})
+        Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.OptionsToolStripMenuItem.Text = "Options"
+        '
+        'ShowOptionsToolStripMenuItem
+        '
+        Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
+        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(148, 22)
+        Me.ShowOptionsToolStripMenuItem.Text = "Show Options"
         '
         'DownloaderToolStripMenuItem
         '
@@ -214,26 +217,12 @@ Partial Class Hentai2ReadForm
         Me.textLog.Size = New System.Drawing.Size(280, 86)
         Me.textLog.TabIndex = 4
         '
-        'OptionsToolStripMenuItem
-        '
-        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowOptionsToolStripMenuItem})
-        Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
-        Me.OptionsToolStripMenuItem.Text = "Options"
-        '
-        'ShowOptionsToolStripMenuItem
-        '
-        Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
-        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ShowOptionsToolStripMenuItem.Text = "Show Options"
-        '
         'Hentai2ReadForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(304, 274)
         Me.Controls.Add(Me.textLog)
-        Me.Controls.Add(Me.btnPath)
         Me.Controls.Add(Me.textManga)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnDownload)
@@ -261,7 +250,6 @@ Partial Class Hentai2ReadForm
     Friend WithEvents btnDownload As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents textManga As TextBox
-    Friend WithEvents btnPath As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
