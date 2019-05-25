@@ -1,7 +1,7 @@
 ﻿Imports System.IO
 
 Public Class [Shared]
-    Public Shared appName As String = "Hermes Manga Downloader 0.3"
+    Public Shared appName As String = "Hermes Manga Downloader 0.4"
     Public Shared emptyFieldMsg As String = "There are empty fields, did you complete them?"
     Public Shared errorDefault As String = "This manga is not available, make sure you entered the name and chapter correctly."
     Public Shared errorMsgEden As String = "This manga is not available or is licensed in your region, make sure you entered the name, chapter and language correctly."
@@ -43,7 +43,7 @@ Public Class [Shared]
         If root.Elements("download-folder").Any Then
             Dim path = root.Element("download-folder").Value
 
-            Dim u As Uri
+            Dim u As Uri = Nothing
             If Uri.TryCreate(path, UriKind.Absolute, u) AndAlso
                     u.IsWellFormedOriginalString Then
                 downloadFolderPref = path

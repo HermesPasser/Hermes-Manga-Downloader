@@ -2,7 +2,8 @@
 Imports System.IO
 
 Public Class Hentai2ReadForm
-    Dim finished As Boolean = False
+    Private finished As Boolean = False
+    Private downloading As Boolean = False
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         textManga.Text = ""
@@ -40,7 +41,11 @@ Public Class Hentai2ReadForm
         Next
 
         finished = True
-        MessageBox.Show("Download Completed.")
+        If Me.WindowState = FormWindowState.Minimized Then
+            NotifyIcon1.ShowBalloonTip(1000, "HMD", "Download Completed.", ToolTipIcon.Info)
+        Else
+            MessageBox.Show("Download Completed.")
+        End If
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -49,6 +54,7 @@ Public Class Hentai2ReadForm
             ReturnMainMenuItem.Enabled = True
             btnDownload.Text = "Download"
             finished = False
+            downloading = False
         End If
         textLog.Text = [Shared].Log
     End Sub
@@ -63,6 +69,7 @@ Public Class Hentai2ReadForm
         Dim c As ListBox.ObjectCollection = listChapters.Items
         Dim t As Thread = New Thread(Sub() Download(m, c, [Shared].downloadFolderPref))
 
+        downloading = True
         textManga.Text = textManga.Text.Replace(" ", "-")
         EnabledChapterButtons(False)
         ReturnMainMenuItem.Enabled = False
@@ -115,5 +122,19 @@ Public Class Hentai2ReadForm
         t.MotherForm = Me
         t.Show()
         Me.Enabled = False
+    End Sub
+
+    Private Sub Hentai2ReadForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If Me.WindowState = FormWindowState.Minimized AndAlso downloading Then
+            Me.Hide()
+            NotifyIcon1.Visible = True
+            NotifyIcon1.ShowBalloonTip(1000, "HMD", "Downloading...", ToolTipIcon.Info)
+        End If
+    End Sub
+
+    Private Sub NotifyIcon1_DoubleClick(sender As Object, e As EventArgs) Handles NotifyIcon1.DoubleClick
+        Me.Show()
+        Me.WindowState = FormWindowState.Normal
+        NotifyIcon1.Visible = False
     End Sub
 End Class

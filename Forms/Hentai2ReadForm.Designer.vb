@@ -23,6 +23,7 @@ Partial Class Hentai2ReadForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Hentai2ReadForm))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.listChapters = New System.Windows.Forms.ListBox()
         Me.btnAddChap = New System.Windows.Forms.Button()
@@ -45,6 +46,7 @@ Partial Class Hentai2ReadForm
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.textLog = New System.Windows.Forms.TextBox()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -217,6 +219,11 @@ Partial Class Hentai2ReadForm
         Me.textLog.Size = New System.Drawing.Size(280, 86)
         Me.textLog.TabIndex = 4
         '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Text = "NotifyIcon1"
+        '
         'Hentai2ReadForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -263,4 +270,5 @@ Partial Class Hentai2ReadForm
     Friend WithEvents ReturnMainMenuItem As ToolStripMenuItem
     Friend WithEvents OptionsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ShowOptionsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NotifyIcon1 As NotifyIcon
 End Class
