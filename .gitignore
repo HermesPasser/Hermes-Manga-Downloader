@@ -3,6 +3,8 @@
 **/obj/*
 **/bin/*
 
+*.pfx
+
 # Folder config file
 Desktop.ini
 
