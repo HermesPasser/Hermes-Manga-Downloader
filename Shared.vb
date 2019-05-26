@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports HUtils
 
 Public Class [Shared]
     Public Shared appName As String = "Hermes Manga Downloader 0.4"
@@ -43,9 +44,7 @@ Public Class [Shared]
         If root.Elements("download-folder").Any Then
             Dim path = root.Element("download-folder").Value
 
-            Dim u As Uri = Nothing
-            If Uri.TryCreate(path, UriKind.Absolute, u) AndAlso
-                    u.IsWellFormedOriginalString Then
+            If DirUtils.IsValidAsDir(path) Then
                 downloadFolderPref = path
             End If
         End If
