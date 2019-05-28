@@ -53,11 +53,15 @@ Public MustInherit Class MangaDownloader
 
     Protected Sub DownloadImage(page As MangaPage)
         Dim filePath As String = Path.Combine(directoryPath.FullName, page.name)
+        If page.url.StartsWith("https://") Then
+            page.url = page.url.Substring(8)
+        End If
         Try
             Dim wc As WebClient = New WebClient()
             wc.DownloadFile("https://" + page.url, filePath)
-        Catch e As Exception
-            Throw New MangaDownloadException("link: " + page.url + Environment.NewLine + "filename: " + filePath + Environment.NewLine + "Error: " + e.ToString())
+        Catch e As WebException
+            ' TODO: this text tells nothing
+            Throw New MangaDownloadException("link: " + page.url + Environment.NewLine + "filename: " + filePath + Environment.NewLine + "Error: " + e.ToString(), page)
         End Try
     End Sub
 End Class
