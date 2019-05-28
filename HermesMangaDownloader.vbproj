@@ -157,6 +157,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MangaDownloader\MangaDownloadException.vb" />
+    <Compile Include="MangaDownloader\MangaKakalotDownloader.vb" />
     <Compile Include="MangaDownloader\MangaEdenDownloader.vb" />
     <Compile Include="MangaDownloader\MangaPage.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
