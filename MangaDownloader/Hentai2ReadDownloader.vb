@@ -1,4 +1,6 @@
-﻿Public Class Hentai2ReadDownloader
+﻿Imports System.Text.RegularExpressions
+
+Public Class Hentai2ReadDownloader
     Inherits MangaDownloader
 
     Protected Overrides Function GetBaseURL() As String
@@ -39,30 +41,17 @@
 
     End Sub
 
-    'Get the line in the html that contains the image links
     Private Function GetImageLinksInTheText(htmlText As String) As String()
         If htmlText Is Nothing Then
             Return Nothing
         End If
 
-        ' TODO: Use regex to clean this mess
+        Dim pattern As String = "\\\/\d+\\\/(\w|\d)+\\\/(\w|\d)+.jpg"
+        Dim matches As MatchCollection = Regex.Matches(htmlText, pattern)
+        Dim links(matches.Count - 1) As String
 
-        If Not htmlText.Contains("var gData") Then
-            Return Nothing
-        End If
-
-        Dim index As Integer = htmlText.IndexOf("var gData")
-        htmlText = htmlText.Substring(index, htmlText.Length - index)
-
-        index = htmlText.IndexOf("[""")
-        htmlText = htmlText.Substring(index + 1, htmlText.LastIndexOf("],") - index - 1)
-        htmlText = htmlText.Replace("\", "").Replace("""", "")
-
-        Dim links As String() = htmlText.Split(",")
-
-        For i As Integer = 0 To links.Length - 1
-            links(i) = "static.hentaicdn.com/hentai/" + links(i)
-            links(i) = links(i).Replace("//", "/")
+        For i = 0 To matches.Count - 1
+            links(i) = "static.hentaicdn.com/hentai/" + matches(i).Value.Replace("\\", "\")
         Next
         Return links
     End Function

@@ -1,4 +1,6 @@
-﻿Public Class MangaEdenDownloader
+﻿Imports System.Text.RegularExpressions
+
+Public Class MangaEdenDownloader
     Inherits MangaDownloader
 
     Public Enum Language
@@ -20,11 +22,10 @@
         mangaChapter = chapter
         directoryPath = New IO.DirectoryInfo(filename) ' folder name: manganame_cn, file name: manganame_cn_pn
 
-        Dim Str As String = GetBaseURL() + language.ToString() + "-manga/" + manga + "/" + chapter + "/1/"
-        Dim stringLinks As String() = GetTextOfImageLinks(GetHTML(Str))
+        Dim Str As String = GetHTML(GetBaseURL() + language.ToString() + "-manga/" + manga + "/" + chapter + "/1/")
+        Dim stringLinks As String() = GetImageLinksInTheText(Str)
 
         If stringLinks IsNot Nothing Then
-            stringLinks = GetImageLinksInTheText(stringLinks)
 
             Dim number As Integer = 1
             Dim pages As New List(Of MangaPage)
@@ -46,33 +47,25 @@
 
     End Sub
 
-    'Get the line in the html that contains the image links
-    Private Function GetTextOfImageLinks(htmlText As String) As String()
+    ' Get the images url of html text
+    Private Function GetImageLinksInTheText(htmlText As String) As String()
         If htmlText Is Nothing Then
             Return Nothing
         End If
 
-        ' TODO: use regex or other fancy method to improve readability
-        Dim htmLines As String() = htmlText.Split(Environment.NewLine.ToCharArray())
+        ' to avoid get any image outside of the <script> tag
+        Dim pagesJsOjb = Regex.Match(htmlText, "var pages = \[{.+}\]")
 
-        For Each line In htmLines
-            If line.Contains("var pages") Then
-                Return line.Split(",")
-            End If
-        Next
-        Return Nothing
-    End Function
+        Dim imagePattern As String = "cdn\.mangaeden\.com\/mangasimg\/[a-zA-Z0-9\/]+\.jpg"
+        Dim matches As MatchCollection = Regex.Matches(pagesJsOjb.Value, imagePattern)
+        Dim lines((matches.Count / 2) - 1) As String
 
-    'Get the line in the html that contains the image links
-    Private Function GetImageLinksInTheText(text As String()) As String()
-        Dim links As New List(Of String)
-        For Each line In text
-            ' TODO: use regex or other fancy method to improve readability
-            If line.Contains("""fs"":") Then
-                Dim link As String = line.Substring(line.IndexOf("//") + 2)
-                links.Add(link.Replace("""", ""))
-            End If
+        Dim j = 0
+        For i = 0 To matches.Count - 1 Step 2 ' skip one because there's two versions of each page, the original one and the resized
+            lines(j) = matches(i).Value
+            j += 1
         Next
-        Return links.ToArray()
+
+        Return lines
     End Function
 End Class
