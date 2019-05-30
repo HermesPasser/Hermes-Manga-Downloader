@@ -1,12 +1,14 @@
 ﻿Public Class MainForm
     Dim eden As MangaEdenForm
     Dim hentai As Hentai2ReadForm
+    Dim kaka As MangaKakalotForm
     Public Shared Main As MainForm
     Public Shared About As FormAbout
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         eden = New MangaEdenForm()
         hentai = New Hentai2ReadForm()
+        kaka = New MangaKakalotForm()
         About = New FormAbout()
         Main = Me
         [Shared].LoadPrefs()
@@ -28,5 +30,10 @@
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Application.Exit()
+    End Sub
+
+    Private Sub kakalotButton_Click(sender As Object, e As EventArgs) Handles kakalotButton.Click
+        kaka.Show()
+        Me.Hide()
     End Sub
 End Class

@@ -34,6 +34,7 @@ Partial Class MainForm
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.kakalotButton = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -57,7 +58,7 @@ Partial Class MainForm
         '
         'Label1
         '
-        Me.Label1.Location = New System.Drawing.Point(13, 77)
+        Me.Label1.Location = New System.Drawing.Point(9, 115)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(313, 30)
         Me.Label1.TabIndex = 4
@@ -69,7 +70,7 @@ Partial Class MainForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DodgerBlue
-        Me.Label2.Location = New System.Drawing.Point(13, 107)
+        Me.Label2.Location = New System.Drawing.Point(9, 145)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(301, 13)
         Me.Label2.TabIndex = 5
@@ -99,7 +100,7 @@ Partial Class MainForm
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(92, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'HelpToolStripMenuItem
@@ -115,11 +116,21 @@ Partial Class MainForm
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
+        'kakalotButton
+        '
+        Me.kakalotButton.Location = New System.Drawing.Point(12, 68)
+        Me.kakalotButton.Name = "kakalotButton"
+        Me.kakalotButton.Size = New System.Drawing.Size(316, 35)
+        Me.kakalotButton.TabIndex = 7
+        Me.kakalotButton.Text = "MangaKakalot" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(last update: 30-2019)"
+        Me.kakalotButton.UseVisualStyleBackColor = True
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(338, 129)
+        Me.ClientSize = New System.Drawing.Size(338, 167)
+        Me.Controls.Add(Me.kakalotButton)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -148,4 +159,5 @@ Partial Class MainForm
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents kakalotButton As Button
 End Class

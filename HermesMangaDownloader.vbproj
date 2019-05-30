@@ -28,7 +28,7 @@
     <SupportUrl>https://hermespasser.github.io</SupportUrl>
     <ProductName>Hermes Manga Downloader</ProductName>
     <PublisherName>Hermes Passer</PublisherName>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.4.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -141,11 +141,23 @@
     <Compile Include="Forms\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\MangaKakalotForm.Designer.vb">
+      <DependentUpon>MangaKakalotForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MangaKakalotForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\OptionsForm.Designer.vb">
       <DependentUpon>OptionsForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\OptionsForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Controls\CustomMenuStrip.Designer.vb">
+      <DependentUpon>CustomMenuStrip.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\CustomMenuStrip.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="MangaDownloader\Hentai2ReadDownloader.vb" />
     <Compile Include="MangaDownloader\MangaDownloader.vb" />
@@ -176,6 +188,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Shared.vb" />
+    <Compile Include="Forms\Controls\ChapterSelector.Designer.vb">
+      <DependentUpon>ChapterSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Controls\ChapterSelector.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\FormAbout.resx">
@@ -190,14 +208,23 @@
     <EmbeddedResource Include="Forms\MangaEdenForm.resx">
       <DependentUpon>MangaEdenForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MangaKakalotForm.resx">
+      <DependentUpon>MangaKakalotForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OptionsForm.resx">
       <DependentUpon>OptionsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\CustomMenuStrip.resx">
+      <DependentUpon>CustomMenuStrip.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Controls\ChapterSelector.resx">
+      <DependentUpon>ChapterSelector.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
