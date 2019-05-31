@@ -3,6 +3,9 @@
 **/obj/*
 **/bin/*
 
+*.dll
+*.user
+*.txt
 *.pfx
 
 # Folder config file
